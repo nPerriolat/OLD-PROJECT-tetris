@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Test_Tetris</title>
+	<div>
+		<audio id="mus_menu" src="mus_menu.mp3"></audio>
+		<audio id="mus_jeu" src="mus_jeu.mp3"></audio>
+		<audio id="mus_score" src="mus_score.mp3"></audio>
+		<audio id="SFX_1" src="SFX_1.mp3"></audio>
+		<audio id="SFX_2" src="SFX_2.mp3"></audio>
+	</div>
+	<style type="text/css">
+		#erreur {
+			color: white;
+			background-color: red;
+		}
+
+		#jeu, #preview {
+			background-color: #E0FFFF;
+			border: 5px solid black;
+		}
+
+		#contenu {
+			column-count: 2;
+			column-gap: 10%;
+		}
+	</style>
+</head>
+<header>
+	<noscript><p class="erreur">Oops, il semblerai que JavaScript ne fonctionne pas. Sans JavaScript le jeu ne peux pas fonctionner.</p></noscript>
+</header>
+<body onclick="musique(0)">
+	<center>
+		<p>Jouez en plein écran sur ordinateur pour une meilleure expérience.</p>
+		<h1>TETRIS</h1>
+	</center>
+	<div id="contenu">
+		<div></div>
+		<canvas width="400" height="600" style="margin-right: 5px; margin-left: 60%;" id="jeu" onclick="getStart()"><p class="erreur">Oops, il semblerai que l'objet canvas ne s'affiche pas. Sans canvas le jeu ne peut pas s'afficher.</p></canvas>
+		<div style="margin-left: 5px; margin-right: 60%;" id="retour">
+			<canvas width="90" height="90" id="preview"><p class="erreur">Oops, il semblerai que l'objet canvas ne s'affiche pas. Sans canvas le jeu ne peut pas s'afficher.</p></canvas>
+			<p>Score : <span id="score"></span></p>
+			<p>Niveau : <span id="niveau"></span></p>
+			<p>Lignes : <span id="lignes"></span></p>
+			<p>Contrôles :<br>Déplacement avec Q & D, Tourner avec Z et Hard drop (tomber) avec S</p>
+			<p>Pour recommencer une partie veuillez rafraîchir la page.</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="tetris.js"></script>
+</html>
